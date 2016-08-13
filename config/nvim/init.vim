@@ -24,7 +24,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 syntax on                   " switch syntax highlighting on
 
 set t_Co=256                " Explicitly tell vim that the terminal supports 256 colors"
-colorscheme dracula         " Set the colorscheme
+colorscheme mac_classic     " Set the colorscheme
 
 " make the highlighting of tabs and other non-text less annoying
 highlight SpecialKey ctermbg=none ctermfg=8
@@ -57,7 +57,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 set backspace=indent,eol,start
 
 " Tab control
-set noexpandtab             " insert tabs rather than spaces for <Tab>
+set expandtab               " insert spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4               " the visible width of tabs
 set softtabstop=4           " edit as if the tabs are 4 characters wide
@@ -304,10 +304,10 @@ let g:neomake_typescript_tsc_maker = {
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='dracula'
-let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
-let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
-let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
+let g:airline_theme='term'
+let g:airline#extensions#tabline#enabled = 1        " enable airline tabline
+let g:airline#extensions#tabline#tab_min_count = 2  " only show tabline if tabs are being used (more than 1 tab open)
+let g:airline#extensions#tabline#show_buffers = 0   " do not show open buffers in tabline
 let g:airline#extensions#tabline#show_splits = 0
 
 
