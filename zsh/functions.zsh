@@ -28,23 +28,6 @@ function f() {
     find . -name "$1"
 }
 
-function ng-stop() {
-    sudo launchctl stop homebrew.mxcl.nginx
-}
-
-function ng-start() {
-    sudo launchctl start homebrew.mxcl.nginx
-}
-function ng-restart() {
-     sudo launchctl start homebrew.mxcl.nginx
-}
-
-function dns-restart() {
-    sudo launchctl stop homebrew.mxcl.dnsmasq
-    sudo launchctl start homebrew.mxcl.dnsmasq
-}
-
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
@@ -106,27 +89,4 @@ function extract() {
     else
         echo "'$1' is not a valid file"
     fi
-}
-
-function scpp() {
-    scp "$1" nicknisi@nicknisi.com:/var/www/nicknisi.com/public_html/share;
-    echo "http://nicknisi.com/share/$1" | pbcopy;
-    echo "Copied to clipboard: http://nicknisi.com/share/$1"
-}
-
-# syntax highlight the contents of a file or the clipboard and place the result on the clipboard
-function hl() {
-    if [ -z "$3" ]; then
-        src=$( pbpaste )
-    else
-        src=$( cat $3 )
-    fi
-
-    if [ -z "$2" ]; then
-        style="moria"
-    else
-        style="$2"
-    fi
-
-    echo $src | highlight -O rtf --syntax $1 --font Inconsoloata --style $style --line-number --font-size 24 | pbcopy
 }

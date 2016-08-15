@@ -89,11 +89,11 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
 #defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 
-echo "Disable press-and-hold for keys in favor of key repeat"
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+echo "Enable press-and-hold for keys in favor of key repeat"
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 
-echo "Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 2
+echo "Set a fast keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 10
 
 echo "Set a shorter Delay until key repeat"
 defaults write NSGlobalDomain InitialKeyRepeat -int 15

@@ -22,6 +22,7 @@ setopt APPEND_HISTORY
 setopt COMPLETE_ALIASES
 
 # make terminal command navigation sane again
+bindkey -v
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[[5D' beginning-of-line

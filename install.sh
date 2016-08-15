@@ -15,12 +15,6 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/osx.sh
 
     source install/nvm.sh
-
-    # create a backup of the original nginx.conf
-    mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.original
-    ln -s ~/.dotfiles/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
-    # symlink the code.dev from dotfiles
-    ln -s ~/.dotfiles/nginx/code.dev /usr/local/etc/nginx/sites-enabled/code.dev
 fi
 
 echo "creating vim directories"

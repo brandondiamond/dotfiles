@@ -13,10 +13,6 @@ brew install ack
 brew install tree
 brew install wget
 
-# development server setup
-brew install nginx
-brew install dnsmasq
-
 # development tools
 brew install git
 brew install hub
