@@ -17,11 +17,17 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/nvm.sh
 fi
 
+echo "Installing resources"
+source install/resources.sh
+
 echo "creating vim directories"
 mkdir -p ~/.vim-tmp
 
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
+
+echo "Installing nvim plugins"
+nvim +PlugInstall
 
 echo "Done."

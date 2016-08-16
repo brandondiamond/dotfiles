@@ -1,6 +1,6 @@
 set -g default-command "login-shell"
 # tmux display things in 256 colors
-set -g default-terminal "tmux-256color-italic"
+set -g default-terminal "screen-256color-italic"
 
 set -g history-limit 20000
 
@@ -25,7 +25,7 @@ set -g visual-activity off
 setw -g aggressive-resize on
 
 # make delay shorter
-set -sg escape-time 0
+set -sg escape-time 1
 
 # tile all windows
 unbind =
@@ -78,7 +78,6 @@ bind -r L resize-pane -R 10
 
 # enable mouse support for switching panes/windows
 setw -g mouse on
-# set-option -g -q mouse on
 
 bind-key -T root PPage if-shell -F "#{alternate_on}" "send-keys PPage" "copy-mode -e; send-keys PPage"
 bind-key -t vi-copy PPage page-up
